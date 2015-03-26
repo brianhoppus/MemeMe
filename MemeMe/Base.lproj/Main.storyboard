@@ -29,7 +29,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kkr-y9-ySO"/>
-                                    <barButtonItem systemItem="camera" id="91e-Vn-Lws"/>
+                                    <barButtonItem systemItem="camera" id="91e-Vn-Lws">
+                                        <connections>
+                                            <action selector="pickImageFromCamera:" destination="vXZ-lx-hvc" id="Jry-UC-Pq2"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
