@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-HV-oFu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-HV-oFu">
                                 <rect key="frame" x="37" y="28" width="301" height="292"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="0Yl-F6-Jf4"/>
@@ -54,6 +54,16 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTl-uT-1Hh">
+                                <rect key="frame" x="46" y="38" width="283" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-hk-Hc8">
+                                <rect key="frame" x="46" y="278" width="283" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -61,17 +71,27 @@
                             <constraint firstAttribute="bottomMargin" secondItem="5Mi-i7-U01" secondAttribute="bottom" id="7R9-cZ-6yE"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="EI6-86-AlI"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="FiF-LJ-71C"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="trailing" constant="-292" id="J5A-nn-764"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="MMR-U5-pLm"/>
                             <constraint firstAttribute="centerY" secondItem="xx4-HV-oFu" secondAttribute="centerY" id="RsE-Bm-QW1"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="bTl-uT-1Hh" secondAttribute="trailing" constant="-292" id="SvR-ko-KJq"/>
                             <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="cnU-d0-g1u"/>
                             <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="daK-zk-Dwp"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="bTl-uT-1Hh" secondAttribute="bottom" constant="-40" id="f6Z-MP-P7a"/>
+                            <constraint firstItem="gEe-hk-Hc8" firstAttribute="top" secondItem="xx4-HV-oFu" secondAttribute="bottom" constant="-42" id="fa1-gw-v5r"/>
+                            <constraint firstAttribute="centerX" secondItem="bTl-uT-1Hh" secondAttribute="centerX" id="iWT-QZ-VDb"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="leading" constant="-9" id="mZy-Qc-bLL"/>
                             <constraint firstItem="5Mi-i7-U01" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="o00-IZ-6rs"/>
+                            <constraint firstAttribute="centerX" secondItem="gEe-hk-Hc8" secondAttribute="centerX" id="rd6-36-o0c"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="bTl-uT-1Hh" secondAttribute="leading" constant="-9" id="rrs-gW-sGd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="MMR-U5-pLm"/>
                                 <exclude reference="RsE-Bm-QW1"/>
                                 <exclude reference="daK-zk-Dwp"/>
+                                <exclude reference="mZy-Qc-bLL"/>
+                                <exclude reference="rrs-gW-sGd"/>
                             </mask>
                         </variation>
                     </view>
