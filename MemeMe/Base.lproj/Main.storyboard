@@ -41,6 +41,10 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="91e-Vn-Lws" id="asa-fc-59i"/>
+                        <outlet property="imageView" destination="xx4-HV-oFu" id="3CA-sU-Tgz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
