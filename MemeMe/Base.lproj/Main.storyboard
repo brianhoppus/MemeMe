@@ -54,13 +54,19 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTl-uT-1Hh">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bTl-uT-1Hh">
                                 <rect key="frame" x="46" y="38" width="283" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="aiJ-7z-RCX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-hk-Hc8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gEe-hk-Hc8">
                                 <rect key="frame" x="46" y="278" width="283" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="M57-GY-GnT"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -70,20 +76,20 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5Mi-i7-U01" secondAttribute="trailing" constant="-16" id="3TW-2S-5Kz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5Mi-i7-U01" secondAttribute="bottom" id="7R9-cZ-6yE"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="EI6-86-AlI"/>
+                            <constraint firstItem="bTl-uT-1Hh" firstAttribute="trailing" secondItem="gEe-hk-Hc8" secondAttribute="trailing" id="ELt-jN-9sq"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="FiF-LJ-71C"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="trailing" constant="-292" id="J5A-nn-764"/>
+                            <constraint firstItem="bTl-uT-1Hh" firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="FmT-gZ-DLf"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="MMR-U5-pLm"/>
+                            <constraint firstItem="bTl-uT-1Hh" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="leading" id="NRh-bd-eHM"/>
                             <constraint firstAttribute="centerY" secondItem="xx4-HV-oFu" secondAttribute="centerY" id="RsE-Bm-QW1"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="bTl-uT-1Hh" secondAttribute="trailing" constant="-292" id="SvR-ko-KJq"/>
+                            <constraint firstItem="bTl-uT-1Hh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="30" id="SyS-i6-iLI"/>
                             <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="cnU-d0-g1u"/>
                             <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="daK-zk-Dwp"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="bTl-uT-1Hh" secondAttribute="bottom" constant="-40" id="f6Z-MP-P7a"/>
-                            <constraint firstItem="gEe-hk-Hc8" firstAttribute="top" secondItem="xx4-HV-oFu" secondAttribute="bottom" constant="-42" id="fa1-gw-v5r"/>
-                            <constraint firstAttribute="centerX" secondItem="bTl-uT-1Hh" secondAttribute="centerX" id="iWT-QZ-VDb"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="leading" constant="-9" id="mZy-Qc-bLL"/>
                             <constraint firstItem="5Mi-i7-U01" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="o00-IZ-6rs"/>
-                            <constraint firstAttribute="centerX" secondItem="gEe-hk-Hc8" secondAttribute="centerX" id="rd6-36-o0c"/>
+                            <constraint firstItem="gEe-hk-Hc8" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="278" id="pY8-C5-2Wh"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="bTl-uT-1Hh" secondAttribute="leading" constant="-9" id="rrs-gW-sGd"/>
+                            <constraint firstItem="bTl-uT-1Hh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="18" id="srf-ra-KSP"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
