@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,8 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-HV-oFu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-HV-oFu">
+                                <rect key="frame" x="37" y="28" width="301" height="292"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="292" id="0Yl-F6-Jf4"/>
+                                    <constraint firstAttribute="height" constant="292" id="2MT-qI-6f8"/>
+                                    <constraint firstAttribute="width" constant="301" id="KyP-6J-Lfa"/>
+                                    <constraint firstAttribute="height" constant="301" id="Nc5-Mp-FOm"/>
+                                    <constraint firstAttribute="height" constant="292" id="jdD-ad-A9w"/>
+                                    <constraint firstAttribute="width" secondItem="xx4-HV-oFu" secondAttribute="height" multiplier="316:301" id="vSE-u4-wlK"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0Yl-F6-Jf4"/>
+                                        <exclude reference="2MT-qI-6f8"/>
+                                        <exclude reference="KyP-6J-Lfa"/>
+                                        <exclude reference="Nc5-Mp-FOm"/>
+                                        <exclude reference="vSE-u4-wlK"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Mi-i7-U01">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
@@ -39,15 +57,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Mi-i7-U01" firstAttribute="top" secondItem="xx4-HV-oFu" secondAttribute="bottom" id="NIK-mw-kfo"/>
-                            <constraint firstItem="5Mi-i7-U01" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="ZhV-MR-pAi"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="cvg-tV-NPp"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="i6g-lI-XWn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xx4-HV-oFu" secondAttribute="trailing" constant="-16" id="iic-2S-q6i"/>
-                            <constraint firstItem="5Mi-i7-U01" firstAttribute="trailing" secondItem="xx4-HV-oFu" secondAttribute="trailing" id="j3G-1t-Idl"/>
-                            <constraint firstItem="5Mi-i7-U01" firstAttribute="leading" secondItem="xx4-HV-oFu" secondAttribute="leading" id="mVM-v3-jtH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5Mi-i7-U01" secondAttribute="trailing" constant="-16" id="3TW-2S-5Kz"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5Mi-i7-U01" secondAttribute="bottom" id="7R9-cZ-6yE"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="21" id="EI6-86-AlI"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="FiF-LJ-71C"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="MMR-U5-pLm"/>
+                            <constraint firstAttribute="centerY" secondItem="xx4-HV-oFu" secondAttribute="centerY" id="RsE-Bm-QW1"/>
+                            <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="cnU-d0-g1u"/>
+                            <constraint firstAttribute="centerX" secondItem="xx4-HV-oFu" secondAttribute="centerX" id="daK-zk-Dwp"/>
+                            <constraint firstItem="5Mi-i7-U01" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="o00-IZ-6rs"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MMR-U5-pLm"/>
+                                <exclude reference="RsE-Bm-QW1"/>
+                                <exclude reference="daK-zk-Dwp"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cameraButton" destination="91e-Vn-Lws" id="asa-fc-59i"/>
