@@ -101,5 +101,24 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         
         return keyboardSize.CGRectValue().height
     }
+    
+    func save() {
+        // Create the meme
+        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!)
+    }
+    
+    func generateMemedImage() -> UIImage {
+        // TODO: Hide toolbar and navbar
+        
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO: Show toolbar and navbar
+        
+        return memedImage
+    }
 }
 
