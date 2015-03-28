@@ -115,13 +115,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="5rP-PB-bAq"/>
+                    <navigationItem key="navigationItem" id="5rP-PB-bAq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="BDg-wY-uWe"/>
+                    </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bottomTextField" destination="gEe-hk-Hc8" id="zNP-Jw-uIW"/>
                         <outlet property="cameraButton" destination="91e-Vn-Lws" id="asa-fc-59i"/>
                         <outlet property="imageView" destination="xx4-HV-oFu" id="3CA-sU-Tgz"/>
+                        <outlet property="shareButton" destination="BDg-wY-uWe" id="VYn-vt-t6A"/>
                         <outlet property="topTextField" destination="bTl-uT-1Hh" id="1qB-3N-3cD"/>
                     </connections>
                 </viewController>
