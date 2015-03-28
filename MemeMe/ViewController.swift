@@ -37,7 +37,13 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        self.subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.unsubscribeToKeyboardNotifications()
     }
 
     @IBAction func pickImageFromLibrary(sender: AnyObject) {
@@ -69,6 +75,25 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+ 
+    func subscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func unsubscribeToKeyboardNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
+    func getKeyboardHeight(notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue // of CGRect
+        
+        return keyboardSize.CGRectValue().height
     }
 }
 
