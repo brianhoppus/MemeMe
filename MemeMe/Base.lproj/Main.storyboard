@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xx4-HV-oFu">
-                                <rect key="frame" x="0.0" y="20" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="292" id="0Yl-F6-Jf4"/>
                                     <constraint firstAttribute="height" constant="292" id="2MT-qI-6f8"/>
@@ -85,6 +85,7 @@
                             <constraint firstItem="5Mi-i7-U01" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="3VA-f6-XgJ"/>
                             <constraint firstItem="5Mi-i7-U01" firstAttribute="top" secondItem="xx4-HV-oFu" secondAttribute="bottom" id="BFG-aE-0jt"/>
                             <constraint firstItem="gEe-hk-Hc8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="BR0-kC-woE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="xx4-HV-oFu" secondAttribute="bottom" id="DjK-t2-l2W"/>
                             <constraint firstItem="5Mi-i7-U01" firstAttribute="top" secondItem="gEe-hk-Hc8" secondAttribute="bottom" constant="18" id="HLh-dk-7ZE"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="MMR-U5-pLm"/>
                             <constraint firstItem="gEe-hk-Hc8" firstAttribute="centerX" secondItem="5Mi-i7-U01" secondAttribute="centerX" id="Njr-C6-KOx"/>
@@ -98,7 +99,7 @@
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5Mi-i7-U01" secondAttribute="bottom" id="ny4-oE-34B"/>
                             <constraint firstItem="bTl-uT-1Hh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" symbolic="YES" id="ov9-rX-m4d"/>
                             <constraint firstItem="xx4-HV-oFu" firstAttribute="leading" secondItem="bTl-uT-1Hh" secondAttribute="leading" constant="-9" id="rrs-gW-sGd"/>
-                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="20" id="twk-pD-xMa"/>
+                            <constraint firstItem="xx4-HV-oFu" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="twk-pD-xMa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5Mi-i7-U01" secondAttribute="trailing" constant="-16" id="wCj-6J-l2Y"/>
                             <constraint firstItem="bTl-uT-1Hh" firstAttribute="leading" secondItem="gEe-hk-Hc8" secondAttribute="leading" id="wtb-GE-C7o"/>
                         </constraints>
@@ -111,12 +112,17 @@
                                 <exclude reference="rrs-gW-sGd"/>
                                 <exclude reference="0Hq-OJ-4Av"/>
                                 <exclude reference="afe-wD-2We"/>
+                                <exclude reference="BFG-aE-0jt"/>
                                 <exclude reference="Plp-cf-O0Z"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="5rP-PB-bAq">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="BDg-wY-uWe"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="BDg-wY-uWe">
+                            <connections>
+                                <action selector="share:" destination="vXZ-lx-hvc" id="CVJ-t5-lRl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -125,6 +131,7 @@
                         <outlet property="cameraButton" destination="91e-Vn-Lws" id="asa-fc-59i"/>
                         <outlet property="imageView" destination="xx4-HV-oFu" id="3CA-sU-Tgz"/>
                         <outlet property="shareButton" destination="BDg-wY-uWe" id="VYn-vt-t6A"/>
+                        <outlet property="toolBar" destination="5Mi-i7-U01" id="uDU-Wn-HBe"/>
                         <outlet property="topTextField" destination="bTl-uT-1Hh" id="1qB-3N-3cD"/>
                     </connections>
                 </viewController>

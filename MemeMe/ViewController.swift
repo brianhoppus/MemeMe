@@ -16,6 +16,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var toolBar: UIToolbar!
     let pickerController = UIImagePickerController()
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -116,7 +117,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     func generateMemedImage() -> UIImage {
         // TODO: Hide toolbar and navbar
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        toolBar.hidden = true
+
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
@@ -124,8 +127,16 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         UIGraphicsEndImageContext()
         
         // TODO: Show toolbar and navbar
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        toolBar.hidden = false
+
         return memedImage
+    }
+    
+    @IBAction func share(sender: UIBarButtonItem) {
+        var memedImage = generateMemedImage()
+        let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        self.presentViewController(activityView, animated: true, completion: nil)
     }
 }
 
