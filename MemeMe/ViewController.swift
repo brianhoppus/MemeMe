@@ -113,6 +113,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     func save() {
         // Create the meme
         var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!)
+        (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage {
@@ -125,6 +126,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+        
+        // Save the meme
+        self.save()
         
         // Show toolbar and navbar
         self.navigationController?.setNavigationBarHidden(false, animated: false)
