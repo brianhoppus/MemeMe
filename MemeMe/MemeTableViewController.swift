@@ -25,7 +25,12 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = memes[indexPath.row]
+        var controller: MemeDetail
+        controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetail") as MemeDetail
+//        controller.imageView.image = cell.memedImage
         
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -34,6 +39,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         cell.textLabel?.text = cellMeme.topText
         cell.detailTextLabel?.text = cellMeme.topText + cellMeme.bottomText
         cell.imageView?.image = cellMeme.memedImage
+        println("cell.memedImage: \(cellMeme.memedImage)")
         
         return cell
     }

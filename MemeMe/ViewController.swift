@@ -19,6 +19,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var navbar: UINavigationItem!
     let pickerController = UIImagePickerController()
+    var memedImage = UIImage()
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName : UIColor.whiteColor(),
@@ -132,7 +133,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
-        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        self.memedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         // Save the meme
@@ -147,7 +148,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     
     func save() {
         // Create the meme
-        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!)
+        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, memedImage: self.memedImage)
         (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
     }
 }

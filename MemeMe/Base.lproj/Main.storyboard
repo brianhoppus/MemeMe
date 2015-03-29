@@ -237,6 +237,39 @@
             </objects>
             <point key="canvasLocation" x="2391.5" y="2.5"/>
         </scene>
+        <!--Meme Detail-->
+        <scene sceneID="dqB-R7-5qF">
+            <objects>
+                <viewController storyboardIdentifier="memeDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DJZ-5Z-Lh1" customClass="MemeDetail" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kvM-cn-szM"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZC-E5-gw0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AUR-wh-VLs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vFC-Ma-K6q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vFC-Ma-K6q" firstAttribute="top" secondItem="AUR-wh-VLs" secondAttribute="topMargin" id="JOl-yv-hIm"/>
+                            <constraint firstItem="pZC-E5-gw0" firstAttribute="top" secondItem="vFC-Ma-K6q" secondAttribute="bottom" id="YEI-hO-7tj"/>
+                            <constraint firstItem="vFC-Ma-K6q" firstAttribute="leading" secondItem="AUR-wh-VLs" secondAttribute="leadingMargin" constant="-16" id="pF0-0m-Lbi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vFC-Ma-K6q" secondAttribute="trailing" constant="-16" id="tdS-bd-sf4"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="vFC-Ma-K6q" id="Oq1-LR-s2g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTH-mj-sEX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2931.5" y="-392.5"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="y5i-fE-bhI">
             <objects>

@@ -19,9 +19,9 @@ class Meme {
         
     }
     
-    init(topText: String, bottomText: String, originalImage: UIImage) {
+    init(topText: String, bottomText: String, memedImage: UIImage) {
         self.topText = topText
         self.bottomText = bottomText
-        self.originalImage = originalImage
+        self.memedImage = memedImage
     }
 }
