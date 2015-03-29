@@ -116,7 +116,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     }
     
     func generateMemedImage() -> UIImage {
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and navbar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         toolBar.hidden = true
 
@@ -126,7 +126,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        // Show toolbar and navbar
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         toolBar.hidden = false
 
