@@ -17,6 +17,7 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navbar: UINavigationItem!
     let pickerController = UIImagePickerController()
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -120,6 +121,9 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.presentViewController(activityView, animated: true, completion: nil)
     }
     
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     func generateMemedImage() -> UIImage {
         // Hide toolbar and navbar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
