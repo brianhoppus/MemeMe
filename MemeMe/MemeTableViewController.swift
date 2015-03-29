@@ -9,5 +9,14 @@
 import UIKit
 
 class MemeTableViewController: UIViewController {
-
-}
+    
+    var memes: [Meme]!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as AppDelegate
+        memes = appDelegate.memes
+        
+        }
+    }
