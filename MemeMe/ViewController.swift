@@ -110,17 +110,17 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         return keyboardSize.CGRectValue().height
     }
     
-    func save() {
-        // Create the meme
-        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!)
-        (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+    @IBAction func share(sender: UIBarButtonItem) {
+        var memedImage = generateMemedImage()
+        let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        self.presentViewController(activityView, animated: true, completion: nil)
     }
     
     func generateMemedImage() -> UIImage {
         // Hide toolbar and navbar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         toolBar.hidden = true
-
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
@@ -133,14 +133,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         // Show toolbar and navbar
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         toolBar.hidden = false
-
+        
         return memedImage
     }
     
-    @IBAction func share(sender: UIBarButtonItem) {
-        var memedImage = generateMemedImage()
-        let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        self.presentViewController(activityView, animated: true, completion: nil)
+    func save() {
+        // Create the meme
+        var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, originalImage: imageView.image!)
+        (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
     }
 }
 
