@@ -107,7 +107,11 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as NSValue // of CGRect
         
-        return keyboardSize.CGRectValue().height
+        if bottomTextField.editing {
+            return keyboardSize.CGRectValue().height
+        } else {
+            return 0
+        }
     }
     
     @IBAction func share(sender: UIBarButtonItem) {
