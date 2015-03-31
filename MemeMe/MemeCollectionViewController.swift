@@ -8,6 +8,29 @@
 
 import UIKit
 
-class MemeCollectionViewController: UIViewController {
+class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var memes: [Meme]!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as AppDelegate
+        memes = appDelegate.memes
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return memes.count
+    }
 
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("MemeCell", forIndexPath: indexPath) as MemeCell
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
 }
