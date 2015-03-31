@@ -28,18 +28,18 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = memes[indexPath.row]
         var controller: MemeDetail
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetail") as MemeDetail
-//        controller.imageView.image = cell.memedImage
-        
+        println("cell.memedImage: \(cell.memedImage)")
+        controller.imageView?.image = cell.memedImage
+        println("controller.imageView.image: \(controller.imageView?.image)")
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("meme") as UITableViewCell
-        let cellMeme = memes[indexPath.row]
+        var cell = tableView.dequeueReusableCellWithIdentifier("meme") as UITableViewCell
+        var cellMeme = memes[indexPath.row]
         cell.textLabel?.text = cellMeme.topText
         cell.detailTextLabel?.text = cellMeme.topText + cellMeme.bottomText
         cell.imageView?.image = cellMeme.memedImage
-        println("cell.memedImage: \(cellMeme.memedImage)")
         
         return cell
     }
