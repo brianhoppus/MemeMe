@@ -13,6 +13,8 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     var memes: [Meme]!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    // MARK: - UIViewController
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
@@ -21,6 +23,8 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         
         self.collectionView.reloadData()
     }
+    
+    // MARK: - UICollectionViewController
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return memes.count
