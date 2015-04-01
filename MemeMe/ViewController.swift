@@ -129,6 +129,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     @IBAction func share(sender: UIBarButtonItem) {
         var memedImage = generateMemedImage()
         let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        // If user completes a share activity, dismiss view controller
+        activityView.completionHandler = {(activityType, completed: Bool) in
+            if completed {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        }
         self.presentViewController(activityView, animated: true, completion: nil)
     }
     
