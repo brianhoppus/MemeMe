@@ -33,6 +33,10 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let cell = memes[indexPath.row]
+        var controller: MemeDetail
+        controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetail") as MemeDetail
+        controller.memedImage = cell.memedImage
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
