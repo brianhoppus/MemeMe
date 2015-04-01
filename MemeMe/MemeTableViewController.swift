@@ -20,6 +20,12 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         
         }
     
+    override func viewDidAppear(animated: Bool) {
+        if memes.isEmpty {
+            self.performSegueWithIdentifier("memeNav", sender: self)
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }

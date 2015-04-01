@@ -271,7 +271,7 @@
                     <navigationItem key="navigationItem" id="pJg-xT-AnL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="wWA-hx-iDE">
                             <connections>
-                                <segue destination="B2y-JM-pyJ" kind="presentation" id="P1v-rb-GUh"/>
+                                <segue destination="B2y-JM-pyJ" kind="presentation" identifier="memeNav" id="P1v-rb-GUh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -393,6 +393,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GBi-Jo-RZ3"/>
+        <segue reference="P1v-rb-GUh"/>
     </inferredMetricsTieBreakers>
 </document>
