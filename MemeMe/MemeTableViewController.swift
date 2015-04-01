@@ -12,6 +12,8 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     var memes: [Meme]!
     
+    // MARK: - UIViewController
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         let object = UIApplication.sharedApplication().delegate
@@ -20,10 +22,13 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         }
     
     override func viewDidAppear(animated: Bool) {
+        // If there are no memes, make one!
         if memes.isEmpty {
             self.performSegueWithIdentifier("memeNav", sender: self)
         }
     }
+    
+    // MARK: - UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
