@@ -158,6 +158,46 @@
                     <view key="view" contentMode="scaleToFill" id="UM5-19-RZ0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qga-4O-LCD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Pc-A3-M4m">
+                                    <size key="itemSize" width="115" height="115"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCollectionCell" id="Acc-nl-8p8" customClass="MemeCell" customModule="MemeMe" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oj1-F5-bWa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Oj1-F5-bWa" secondAttribute="bottom" constant="-8" id="1hx-KY-gX3"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Oj1-F5-bWa" secondAttribute="trailing" constant="-8" id="JIY-Lj-q3g"/>
+                                            <constraint firstItem="Oj1-F5-bWa" firstAttribute="top" secondItem="Acc-nl-8p8" secondAttribute="topMargin" constant="-8" id="hDw-qC-y0v"/>
+                                            <constraint firstItem="Oj1-F5-bWa" firstAttribute="leading" secondItem="Acc-nl-8p8" secondAttribute="leadingMargin" constant="-8" id="prj-eP-Cy7"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="Oj1-F5-bWa" id="5gI-Jd-7aS"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="1Bk-6c-IiU" id="vMg-fe-JGq"/>
+                                    <outlet property="delegate" destination="1Bk-6c-IiU" id="hi7-b7-A3r"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jT2-mf-qfC">
@@ -348,6 +388,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="P1v-rb-GUh"/>
+        <segue reference="GBi-Jo-RZ3"/>
     </inferredMetricsTieBreakers>
 </document>
