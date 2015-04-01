@@ -17,7 +17,6 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as AppDelegate
         memes = appDelegate.memes
-        
         }
     
     override func viewDidAppear(animated: Bool) {
@@ -41,8 +40,8 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("meme") as UITableViewCell
         var cellMeme = memes[indexPath.row]
-        cell.textLabel?.text = cellMeme.topText
-        cell.detailTextLabel?.text = cellMeme.topText + cellMeme.bottomText
+        cell.textLabel?.text = "\(cellMeme.topText) \(cellMeme.bottomText)"
+        cell.detailTextLabel?.text = ""
         cell.imageView?.image = cellMeme.memedImage
         
         return cell
