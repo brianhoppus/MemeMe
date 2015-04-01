@@ -28,9 +28,7 @@ class MemeTableViewController: UIViewController, UITableViewDataSource, UITableV
         let cell = memes[indexPath.row]
         var controller: MemeDetail
         controller = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetail") as MemeDetail
-        println("cell.memedImage: \(cell.memedImage)")
-        controller.imageView?.image = cell.memedImage
-        println("controller.imageView.image: \(controller.imageView?.image)")
+        controller.memedImage = cell.memedImage
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
