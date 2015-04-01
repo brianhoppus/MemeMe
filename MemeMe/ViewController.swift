@@ -27,6 +27,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         NSStrokeWidthAttributeName : -3.0
     ]
 
+    // MARK: - UIViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerController.delegate = self
@@ -55,6 +57,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
     override func viewWillDisappear(animated: Bool) {
         self.unsubscribeToKeyboardNotifications()
     }
+    
+    // MARK: - UIImagePickerController
 
     @IBAction func pickImageFromLibrary(sender: AnyObject) {
         pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
@@ -78,6 +82,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - UITextField delegate methods
+    
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
@@ -96,6 +102,8 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
+    
+    // MARK: - adjust view based for keyboard height
     
     func keyboardWillShow(notification: NSNotification) {
         self.view.frame.origin.y -= getKeyboardHeight(notification)
@@ -116,15 +124,14 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         }
     }
     
+    // MARK: - Share a meme
+    
     @IBAction func share(sender: UIBarButtonItem) {
         var memedImage = generateMemedImage()
         let activityView = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         self.presentViewController(activityView, animated: true, completion: nil)
     }
     
-    @IBAction func cancel(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
     func generateMemedImage() -> UIImage {
         // Hide toolbar and navbar
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -150,6 +157,12 @@ UINavigationControllerDelegate, UITextFieldDelegate {
         // Create the meme
         var meme = Meme(topText: topTextField.text, bottomText: bottomTextField.text, memedImage: self.memedImage)
         (UIApplication.sharedApplication().delegate as AppDelegate).memes.append(meme)
+    }
+
+    // MARK: - return to previous view
+    
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
