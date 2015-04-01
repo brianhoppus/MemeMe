@@ -11,6 +11,7 @@ import UIKit
 class MemeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var memes: [Meme]!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,6 +19,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         let appDelegate = object as AppDelegate
         memes = appDelegate.memes
         
+        self.collectionView.reloadData()
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,6 +31,7 @@ class MemeCollectionViewController: UIViewController, UICollectionViewDataSource
         let meme = memes[indexPath.row]
         cell.imageView.image = meme.memedImage
         
+        println("\(meme.topText)")
         return cell
     }
     
